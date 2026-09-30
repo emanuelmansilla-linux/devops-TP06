@@ -1,17 +1,15 @@
-name: CI/CD Pipeline
 
 # ── Triggers ──────────────────────────────────────────────
 on:
   push:
     branches:
-      - main          # pipeline completo
-      - develop       # solo CI (sin deploy)
-      - 'feature/**'  # solo lint + test
+      - main
+      - develop
+      - 'feature/**'
   pull_request:
     branches:
       - main
       - develop
-
 # ── Variables globales ────────────────────────────────────
 env:
   DOCKER_IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/devops-portfolio
